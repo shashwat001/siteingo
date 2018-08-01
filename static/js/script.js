@@ -33,6 +33,8 @@ $(document).ready(function(){
 	init('base');
 	init('expo');
 	init('modulous');
+	init('modinvbase');
+	init('modinvmodulous');
 });
 
 function validateNumber(ta)
@@ -42,6 +44,10 @@ function validateNumber(ta)
 	{
 		ta.next().show();
 		throw "Not a number";
+	}
+	else
+	{
+		ta.next().hide();
 	}
 }
 
@@ -71,6 +77,22 @@ function calculateModularExponentiation()
 
 		$('#mexpo').val(getModExpoValue(bigInt(a), bigInt(b), bigInt(m)));
 		init('mexpo');
+	}
+	catch (err)
+	{}
+}
+
+function calculateModularInverse()
+{
+	try
+	{
+		validateNumber($('#modinvbase'));
+		validateNumber($('#modinvmodulous'));
+		var a = $('#modinvbase').val().trim();
+		var m = $('#modinvmodulous').val().trim();
+
+		$('#minv').val(getModExpoValue(bigInt(a), bigInt(m).subtract(2), bigInt(m)));
+		init('minv');
 	}
 	catch (err)
 	{}
