@@ -1,3 +1,7 @@
+body{
+	padding:10px;
+}
+
 textarea {
 	border: 0 none white;
 	outline: none;
@@ -21,6 +25,10 @@ td {
 th
 {
 	font-weight: bold;	
+}
+
+.github-button {
+float: right;
 }
 
 /*.green-border-focus .form-control:focus {*/
