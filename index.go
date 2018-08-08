@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"net/http"
 	"strings"
 )
@@ -19,8 +18,6 @@ func serveHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content Type", "text/html")
 	w.Header().Set("Cache-Control", "max-age=2592000") // 30 days
 	http.ServeFile(w, r, "./static/")
-	log.Println("This is reaching sendHTTP")
-
 }
 
 func main() {
