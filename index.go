@@ -15,7 +15,6 @@ func serveHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Etag", e)
-	w.Header().Set("Content Type", "text/html")
 	w.Header().Set("Cache-Control", "max-age=2592000") // 30 days
 	http.ServeFile(w, r, "./static/")
 }
